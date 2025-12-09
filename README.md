@@ -44,12 +44,16 @@ Bidirectional administrative messaging between citizens and healthcare providers
 
 ---
 
-## Reference Documentation
+### HelseID
+
+Authentication and environment reference for NHN integrations.
+
+📁 [HelseID Folder](./diagrams/HelseID/)
 
 | Document | Description |
 | -------- | ----------- |
-| [HelseID Authentication](./diagrams/_Reference/HelseID_Auth.md) | System-to-system authentication (deadline: 1.12.2025) |
-| [Test Environments](./diagrams/_Reference/Test_Environments.md) | MAS-02, TEST1, TEST2, QA, Prodkopi, PROD |
+| [Authentication](./diagrams/HelseID/HelseID_Auth.md) | System-to-system authentication (deadline: 1.12.2025) |
+| [Test Environments](./diagrams/HelseID/Test_Environments.md) | MAS-02, TEST1, TEST2, QA, Prodkopi, PROD |
 
 ---
 
