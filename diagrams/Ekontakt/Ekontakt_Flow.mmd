@@ -1,0 +1,29 @@
+sequenceDiagram
+    participant Citizen as 👤 Citizen
+    participant HN as 🌐 Helsenorge
+    participant AMQP as 📨 AMQP
+    participant EPJ as 🏥 Healthcare System
+
+    rect rgb(240, 248, 255)
+        Note over Citizen,EPJ: Citizen Initiates Contact
+        Citizen->>HN: Send message
+        HN->>AMQP: Forespørsel fra innbygger
+        AMQP->>EPJ: Deliver to health contact
+    end
+
+    rect rgb(240, 255, 240)
+        Note over EPJ,Citizen: Healthcare Responds
+        EPJ->>AMQP: Svar fra helsekontakt
+        AMQP->>HN: Forward response
+        HN->>Citizen: Display message
+    end
+
+    rect rgb(255, 250, 240)
+        Note over EPJ,Citizen: Healthcare Initiates
+        EPJ->>AMQP: Forespørsel fra helsekontakt
+        AMQP->>HN: Forward to citizen
+        HN->>Citizen: Display message
+        Citizen->>HN: Reply
+        HN->>AMQP: Svar fra innbygger
+        AMQP->>EPJ: Deliver reply
+    end
