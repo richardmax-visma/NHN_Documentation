@@ -18,43 +18,43 @@ Sends health contact information to citizens via AMQP messaging. Originally call
 
 ### MsgHead (Header Message)
 
-| Field | Norwegian | English |
-|-------|-----------|---------|
-| `msgId` | Meldings-ID | Message ID (unique) |
-| `type` | Type | Message type |
-| `sender` | Avsender | Sender info |
-| `receiver` | Mottaker | Receiver info |
-| `patient` | Pasient | Patient info |
-| `ack` | Kvittering | Acknowledgment settings |
+| Field      | Norwegian   | English                 |
+| ---------- | ----------- | ----------------------- |
+| `msgId`    | Meldings-ID | Message ID (unique)     |
+| `type`     | Type        | Message type            |
+| `sender`   | Avsender    | Sender info             |
+| `receiver` | Mottaker    | Receiver info           |
+| `patient`  | Pasient     | Patient info            |
+| `ack`      | Kvittering  | Acknowledgment settings |
 
 ### TjenesteOversikt (Service Overview)
 
-| Field | Norwegian | English |
-|-------|-----------|---------|
+| Field       | Norwegian | English          |
+| ----------- | --------- | ---------------- |
 | `tjenester` | Tjenester | List of services |
 
 ### Tjeneste (Service)
 
-| Field | Norwegian | English |
-|-------|-----------|---------|
-| `id` | ID | Service identifier |
-| `navn` | Navn | Service name |
+| Field                      | Norwegian                 | English                           |
+| -------------------------- | ------------------------- | --------------------------------- |
+| `id`                       | ID                        | Service identifier                |
+| `navn`                     | Navn                      | Service name                      |
 | `digitalInnbyggertjeneste` | Digital innbyggertjeneste | Is digital citizen service (bool) |
-| `relaterteRoller` | Relaterte roller | Related roles/personnel |
+| `relaterteRoller`          | Relaterte roller          | Related roles/personnel           |
 
 ### RelaterteRoller (Related Roles)
 
-| Field | Norwegian | English |
-|-------|-----------|---------|
+| Field            | Norwegian      | English                   |
+| ---------------- | -------------- | ------------------------- |
 | `helsepersonell` | Helsepersonell | Healthcare personnel list |
 
 ### Applikasjonskvittering (Application Receipt)
 
-| Field | Norwegian | English |
-|-------|-----------|---------|
-| `msgId` | Meldings-ID | Original message ID |
-| `status` | Status | Processing status |
-| `errorCode` | Feilkode | Error code (if failed) |
+| Field       | Norwegian   | English                |
+| ----------- | ----------- | ---------------------- |
+| `msgId`     | Meldings-ID | Original message ID    |
+| `status`    | Status      | Processing status      |
+| `errorCode` | Feilkode    | Error code (if failed) |
 
 ## Flow
 
@@ -71,3 +71,8 @@ If citizen is not digitally active, the acknowledgment will contain an error ind
 
 - Hodemelding v1.2: https://www.ehelse.no/standardisering/standarder/standard-for-hodemelding
 - Applikasjonskvittering v1.1: https://ehelse.no/his80415-2012
+
+## Sources
+
+- Helsenorge for kommuner – hjemmetjenesten: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/1875804167/Helsenorge+for+kommuner+-+hjemmetjenesten
+- Meldingsutveksling med Helsenorge: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/690913297/Meldingsutveksling+med+Helsenorge

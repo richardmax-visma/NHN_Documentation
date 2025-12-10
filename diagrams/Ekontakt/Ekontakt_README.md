@@ -61,7 +61,8 @@ See [Ekontakt_Classes.mmd](./Ekontakt_Classes.mmd) for data model.
 | JPG    | image/jpeg      | Images    |
 | PNG    | image/png       | Images    |
 
-## Links
+## Sources
 
-- [E-kontakt Documentation](https://utviklerportal.nhn.no/informasjonstjenester/dialogtjenester/e-kontakt/)
-- [AMQP eKontakt Technical Details](https://utviklerportal.nhn.no/informasjonstjenester/dialogtjenester/e-kontakt/amqp-ekontakt/)
+- Helsenorgetjenester overview: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/690749444/Helsenorgetjenester
+- Meldingsutveksling med Helsenorge: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/690913297/Meldingsutveksling+med+Helsenorge
+- Teknisk integrasjon med Helsenorge og PVK: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/691175425/Teknisk+integrasjon+med+Helsenorge+og+Personvernkomponenten+PVK

@@ -1,6 +1,7 @@
 # HelseID Authentication Reference
 
 ## Overview
+
 HelseID is Norway's national authentication service for the health sector, providing secure identity verification for both users and systems.
 
 ## ⚠️ Important Deadline
@@ -10,10 +11,12 @@ HelseID is Norway's national authentication service for the health sector, provi
 ## Authentication Types
 
 ### 1. User Authentication
+
 - For end-user login flows
 - Supports Norwegian national ID providers
 
 ### 2. System-to-System (Machine-to-Machine)
+
 - For server-to-server API calls
 - Uses OAuth 2.0 client credentials flow
 - Required for all NHN API integrations
@@ -21,6 +24,7 @@ HelseID is Norway's national authentication service for the health sector, provi
 ## Implementation Requirements
 
 ### For System-to-System Access
+
 1. Register your system in the HelseID portal
 2. Obtain client credentials (client_id, client_secret or certificate)
 3. Request appropriate scopes for your API needs
@@ -50,31 +54,30 @@ HelseID is Norway's national authentication service for the health sector, provi
 ## Scopes
 
 Request only the scopes needed for your integration:
+
 - Helsenorge APIs
 - AMQP messaging
 - FHIR resources
 - Specific service endpoints
 
-## Links
+## Sources
 
-| Resource | URL |
-|----------|-----|
-| HelseID Portal | https://helseid.portal.nhn.no |
-| Developer Documentation | https://utviklerportal.nhn.no |
-| HelseID Test Environment | Available in TEST1, TEST2, QA |
+- Krav til bruk av HelseID for system-til-system tilgang til APIer: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/2663776258/Krav+til+bruk+av+HelseID+for+system+til+system+tilgang+til+APIer
+- Systemdokumentasjon for integrasjon med Helsenorge (overview): https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/overview?mode=global
 
 ## Environment-Specific HelseID Endpoints
 
-| Environment | HelseID Base URL |
-|-------------|------------------|
-| TEST1 | https://helseid-sts.test.nhn.no |
-| TEST2 | https://helseid-sts.test.nhn.no |
-| QA | https://helseid-sts.qa.nhn.no |
-| PROD | https://helseid-sts.nhn.no |
+| Environment | HelseID Base URL                |
+| ----------- | ------------------------------- |
+| TEST1       | https://helseid-sts.test.nhn.no |
+| TEST2       | https://helseid-sts.test.nhn.no |
+| QA          | https://helseid-sts.qa.nhn.no   |
+| PROD        | https://helseid-sts.nhn.no      |
 
 ## Migration Notes
 
 If currently using basic authentication or other methods:
+
 1. Register in HelseID portal
 2. Update authentication flow
 3. Test in TEST1/TEST2 environment

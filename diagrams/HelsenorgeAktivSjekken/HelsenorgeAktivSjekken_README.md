@@ -35,3 +35,9 @@ Checks if citizens are digitally active on Helsenorge (Norwegian health portal).
 - Children under 16 cannot be `erAktivSelv` (must go through parents)
 - `erAktivViaAndre` = parent representation OR power of attorney
 - `tildeltFullmakt` = person cannot consent themselves (e.g., dementia)
+
+## Sources
+
+- HelsenorgeAktiv documentation: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/1810268162/HelsenorgeAktiv
+- HelsenorgeAktivSjekken: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/2043478017/HelsenorgeAktivSjekken
+- Swagger: https://eksternapi.hn.test.nhn.no/digitaltaktiv/swagger/index.html

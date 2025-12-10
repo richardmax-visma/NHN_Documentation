@@ -20,14 +20,14 @@ Sends new or updated health contact information to citizens. The health contact 
 
 Contains sender, receiver, and patient info. The actual health contact is in the Document section as FHIR resource.
 
-| Element | Description |
-|---------|-------------|
-| MsgId | Unique message ID |
-| Type | Message type |
-| Ack | Acknowledgment settings |
-| Sender/Receiver | Organization info |
-| Patient | Patient info |
-| Document | FHIR EpisodeOfCare |
+| Element         | Description             |
+| --------------- | ----------------------- |
+| MsgId           | Unique message ID       |
+| Type            | Message type            |
+| Ack             | Acknowledgment settings |
+| Sender/Receiver | Organization info       |
+| Patient         | Patient info            |
+| Document        | FHIR EpisodeOfCare      |
 
 ### FHIR Resources
 
@@ -35,37 +35,38 @@ Uses two FHIR resources:
 
 #### EpisodeOfCare
 
-| Field | Description |
-|-------|-------------|
-| id | Episode identifier |
-| status | Current status |
-| meta.security | Access restriction (for youth 12-16) |
-| patient | Reference to patient |
-| managingOrganization | Healthcare organization |
-| careTeam | Contained CareTeam |
+| Field                | Description                          |
+| -------------------- | ------------------------------------ |
+| id                   | Episode identifier                   |
+| status               | Current status                       |
+| meta.security        | Access restriction (for youth 12-16) |
+| patient              | Reference to patient                 |
+| managingOrganization | Healthcare organization              |
+| careTeam             | Contained CareTeam                   |
 
 #### CareTeam (contained)
 
-| Field | Description |
-|-------|-------------|
-| name | Team/service name |
+| Field       | Description                        |
+| ----------- | ---------------------------------- |
+| name        | Team/service name                  |
 | participant | List of healthcare personnel/roles |
 
 ### AccessSecurity Enum (meta.security)
 
 For patients aged 12-15, must specify access restrictions:
 
-| Code | Norwegian | English |
-|------|-----------|---------|
-| N | Normal | Both parents and youth have access |
-| NORN_FORANS | Nektet, foreldreansvarlig | Parents denied (youth only) |
-| NORN_UNGDOM | Nektet, ungdom | Youth denied (parents only) |
+| Code        | Norwegian                 | English                            |
+| ----------- | ------------------------- | ---------------------------------- |
+| N           | Normal                    | Both parents and youth have access |
+| NORN_FORANS | Nektet, foreldreansvarlig | Parents denied (youth only)        |
+| NORN_UNGDOM | Nektet, ungdom            | Youth denied (parents only)        |
 
-*Source: Volven kodeverk 9603*
+_Source: Volven kodeverk 9603_
 
 ## Dialog Categorization (New Feature - Nov 2025)
 
 Health contacts can now specify dialog categories:
+
 - Helps EPJ route incoming messages to correct personnel
 - Citizen sees category options when sending messages
 - If no categories defined, feature is hidden from citizen
@@ -85,3 +86,8 @@ Implemented via CareTeam participants with different roles.
 - Hodemelding v1.2
 - FHIR EpisodeOfCare: http://helsenorge.no/fhir/StructureDefinition/hn-specialist-EpisodeOfCare
 - FHIR CareTeam: http://helsenorge.no/fhir/StructureDefinition/hn-specialist-EpisodeOfCare_containedCareTeam
+
+## Sources
+
+- AMQP Notifikasjon Helsekontakt: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/1975418911/AMQP+Notifikasjon+Helsekontakt
+- Meldingsutveksling med Helsenorge: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/690913297/Meldingsutveksling+med+Helsenorge
