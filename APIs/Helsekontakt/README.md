@@ -10,11 +10,11 @@ Citizen entry point for digital communication and services via Helsenorge.
 
 ## Variants and technology
 
-| Technology  | API                                                                                         | Use Case                | Status                |
-| ----------- | ------------------------------------------------------------------------------------------- | ----------------------- | --------------------- |
-| AMQP        | [Tjenesteoversikt](AMQP%20Tjenesteoversikt/AMQP_Tjenesteoversikt_README.md)                 | Home care services only | In Production         |
-| FHIR        | [Medlemstjenester](Medlemstjenester/Medlemstjenester_README.md)                             | Membership services     | In Production         |
-| AMQP + FHIR | [Notifikasjon Helsekontakt](AMQP%20Notifikasjon%20Helsekontakt/AMQP_Notifikasjon_README.md) | General notifications   | In Production (Pilot) |
+| Technology  | API                                                              | Use Case                | Status                |
+| ----------- | ---------------------------------------------------------------- | ----------------------- | --------------------- |
+| AMQP        | [Tjenesteoversikt](AMQP%20Tjenesteoversikt/)                     | Home care services only | In Production         |
+| FHIR        | [Medlemstjenester](Medlemstjenester/)                            | Membership services     | In Production         |
+| AMQP + FHIR | [Notifikasjon Helsekontakt](AMQP%20Notifikasjon%20Helsekontakt/) | General notifications   | In Production (Pilot) |
 
 ## Health contact types
 
