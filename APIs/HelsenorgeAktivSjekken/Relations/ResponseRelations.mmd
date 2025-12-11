@@ -1,15 +1,4 @@
 classDiagram
-    class Request {
-        +string[] fnrListe
-        +int omraade
-    }
-
-    class Omraade {
-        <<enumeration>>
-        HELSEHJELP = 3
-        UNGDOM = 6
-    }
-
     class Response {
         +Map~String, ErAktivStatus~ erAktivListe
     }
@@ -22,5 +11,4 @@ classDiagram
         +bool tildeltFullmakt
     }
 
-    Request --> Omraade : omraade
     Response *-- ErAktivStatus : contains

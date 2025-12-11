@@ -2,7 +2,7 @@
 
 Mermaid diagrams showing class relationships for HelsenorgeAktivSjekken.
 
-- [ClassRelations.mmd](ClassRelations.mmd) – Request/response and status linkage
+- [RequestRelations.mmd](RequestRelations.mmd) – Request to context area mapping
 
 ```mermaid
 classDiagram
@@ -17,6 +17,14 @@ classDiagram
 		UNGDOM = 6
 	}
 
+	Request --> Omraade : omraade
+
+```
+
+- [ResponseRelations.mmd](ResponseRelations.mmd) – Response status composition
+
+```mermaid
+classDiagram
 	class Response {
 		+Map~String, ErAktivStatus~ erAktivListe
 	}
@@ -29,7 +37,6 @@ classDiagram
 		+bool tildeltFullmakt
 	}
 
-	Request --> Omraade : omraade
 	Response *-- ErAktivStatus : contains
 
 ```

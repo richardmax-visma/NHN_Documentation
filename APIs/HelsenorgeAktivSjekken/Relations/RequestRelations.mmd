@@ -1,0 +1,13 @@
+classDiagram
+    class Request {
+        +string[] fnrListe
+        +int omraade
+    }
+
+    class Omraade {
+        <<enumeration>>
+        HELSEHJELP = 3
+        UNGDOM = 6
+    }
+
+    Request --> Omraade : omraade

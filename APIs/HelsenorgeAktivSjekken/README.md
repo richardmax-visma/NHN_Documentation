@@ -72,7 +72,7 @@ classDiagram
 
 ```
 
-See also: [Relations/ClassRelations.mmd](Relations/ClassRelations.mmd) for the full class diagram.
+See also: [Relations/RequestRelations.mmd](Relations/RequestRelations.mmd) and [Relations/ResponseRelations.mmd](Relations/ResponseRelations.mmd) for the class relationships.
 
 ### [ErAktivStatus](Classes/ErAktivStatus.mmd)
 
@@ -139,7 +139,7 @@ Content-Type: application/json
 ## Diagrams and classes
 
 - Request/response classes: [Request](Classes/Request.mmd), [Omraade](Classes/Omraade.mmd), [Response](Classes/Response.mmd), [ErAktivStatus](Classes/ErAktivStatus.mmd).
-- Class relations: [Relations/ClassRelations.mmd](Relations/ClassRelations.mmd) (Mermaid class diagram).
+- Class relations: [Relations/RequestRelations.mmd](Relations/RequestRelations.mmd) and [Relations/ResponseRelations.mmd](Relations/ResponseRelations.mmd) (Mermaid class diagrams).
 - Call flow (inline):
 
 ```mermaid
