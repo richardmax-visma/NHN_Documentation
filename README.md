@@ -28,7 +28,7 @@ Mermaid diagrams and documentation for Norsk Helsenett (NHN) integrations.
 
 Check if citizens are digitally active on Helsenorge.
 
-📁 [Documentation](./DigiHealth/APIs/HelsenorgeAktivSjekken/HelsenorgeAktivSjekken_README.md)
+📁 [Documentation](./DigiHealth/APIs/HelsenorgeAktivSjekken/README.md)
 
 | Diagram                                                                                  | Description             |
 | ---------------------------------------------------------------------------------------- | ----------------------- |
@@ -59,7 +59,7 @@ Bidirectional administrative messaging between citizens and healthcare providers
 
 _Prerequisite: run HelsenorgeAktivSjekken to verify the citizen’s digital reachability and channel before sending AMQP messages._
 
-📁 [Documentation](./DigiHealth/APIs/Ekontakt/Ekontakt_README.md)
+📁 [Documentation](./DigiHealth/APIs/Ekontakt/README.md)
 
 | Diagram                                                                                   | Description             |
 | ----------------------------------------------------------------------------------------- | ----------------------- |
@@ -75,21 +75,21 @@ Environment reference and endpoints: [Test Environments](./DigiHealth/Test_Envir
 
 | API                                                                                                                | Tech      | Purpose                              |
 | ------------------------------------------------------------------------------------------------------------------ | --------- | ------------------------------------ |
-| [HelsenorgeAktivSjekken](./DigiHealth/APIs/HelsenorgeAktivSjekken/HelsenorgeAktivSjekken_README.md)                | REST      | Check if citizen is digitally active |
+| [HelsenorgeAktivSjekken](./DigiHealth/APIs/HelsenorgeAktivSjekken/README.md)                                       | REST      | Check if citizen is digitally active |
 | [AMQP Tjenesteoversikt](./DigiHealth/APIs/Helsekontakt/AMQP%20Tjenesteoversikt/AMQP_Tjenesteoversikt_README.md)    | AMQP      | Home care health contacts            |
 | [Medlemstjenester](./DigiHealth/APIs/Helsekontakt/Medlemstjenester/Medlemstjenester_README.md)                     | FHIR      | Membership-based health services     |
 | [AMQP Notifikasjon](./DigiHealth/APIs/Helsekontakt/AMQP%20Notifikasjon%20Helsekontakt/AMQP_Notifikasjon_README.md) | AMQP+FHIR | General health contact notifications |
-| [E-kontakt](./DigiHealth/APIs/Ekontakt/Ekontakt_README.md)                                                         | AMQP      | Administrative citizen messaging     |
+| [E-kontakt](./DigiHealth/APIs/Ekontakt/README.md)                                                                  | AMQP      | Administrative citizen messaging     |
 
 ### Auth per API (quick view)
 
 | API                                                                                                                        | Tech      | Auth                                                                                                                   |
 | -------------------------------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------- |
-| [HelsenorgeAktivSjekken](./DigiHealth/APIs/HelsenorgeAktivSjekken/HelsenorgeAktivSjekken_README.md)                        | REST      | [HelseID (tokens)](./DigiHealth/Authentication/HelseID_Auth.md)                                                        |
+| [HelsenorgeAktivSjekken](./DigiHealth/APIs/HelsenorgeAktivSjekken/README.md)                                               | REST      | [HelseID (tokens)](./DigiHealth/Authentication/HelseID_Auth.md)                                                        |
 | [Helsekontakt Medlemstjenester](./DigiHealth/APIs/Helsekontakt/Medlemstjenester/Medlemstjenester_README.md)                | FHIR/REST | [HelseID (tokens)](./DigiHealth/Authentication/HelseID_Auth.md)                                                        |
 | [Helsekontakt Tjenesteoversikt](./DigiHealth/APIs/Helsekontakt/AMQP%20Tjenesteoversikt/AMQP_Tjenesteoversikt_README.md)    | AMQP      | [AMQP mTLS](./DigiHealth/Authentication/AMQP_Auth.md)                                                                  |
 | [Helsekontakt Notifikasjon](./DigiHealth/APIs/Helsekontakt/AMQP%20Notifikasjon%20Helsekontakt/AMQP_Notifikasjon_README.md) | AMQP+FHIR | [AMQP mTLS](./DigiHealth/Authentication/AMQP_Auth.md); [HelseID (tokens)](./DigiHealth/Authentication/HelseID_Auth.md) |
-| [E-kontakt](./DigiHealth/APIs/Ekontakt/Ekontakt_README.md)                                                                 | AMQP      | [AMQP mTLS](./DigiHealth/Authentication/AMQP_Auth.md)                                                                  |
+| [E-kontakt](./DigiHealth/APIs/Ekontakt/README.md)                                                                          | AMQP      | [AMQP mTLS](./DigiHealth/Authentication/AMQP_Auth.md)                                                                  |
 
 ## Viewing Diagrams
 
