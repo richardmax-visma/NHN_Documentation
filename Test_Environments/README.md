@@ -7,7 +7,7 @@ NHN provides multiple test environments for development and validation of Helsen
 - Determine which environment to target during development, testing, or production.
 - Find base URLs for Helsenorge, AMQP, and HelseID endpoints.
 
-See also: [HelseID Authentication](../Authentication/HelseID_Auth.md) for REST/FHIR tokens and [AMQP Authentication](../Authentication/AMQP_Auth.md) for mTLS certs/queues.
+See also: [HelseID Authentication](../Authentication/HelseID_Auth/) for REST/FHIR tokens and [AMQP Authentication](../Authentication/AMQP_Auth/) for mTLS certs/queues.
 
 ## Environment summary
 

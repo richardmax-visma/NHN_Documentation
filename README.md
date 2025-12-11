@@ -19,8 +19,8 @@ Mermaid diagrams and documentation for Norsk Helsenett (NHN) integrations.
   - REST/FHIR (e.g., HelsenorgeAktivSjekken, Helsekontakt Medlemstjenester): OAuth2 client-credentials via HelseID → short-lived bearer tokens per request.
   - AMQP (e.g., E-kontakt, Helsekontakt AMQP flows): mutual TLS with NHN-issued client cert/key plus queue/vhost ACLs → no bearer tokens inside messages.
 
-🔐 [HelseID Auth](./DigiHealth/Authentication/HelseID_Auth.md)
-🔒 [AMQP Auth](./DigiHealth/Authentication/AMQP_Auth.md)
+🔐 [HelseID Auth](./DigiHealth/Authentication/HelseID_Auth/README.md)
+🔒 [AMQP Auth](./DigiHealth/Authentication/AMQP_Auth/README.md)
 
 ## APIs
 
@@ -83,13 +83,13 @@ Environment reference and endpoints: [Test Environments](./DigiHealth/Test_Envir
 
 ### Auth per API (quick view)
 
-| API                                                                                                                        | Tech      | Auth                                                                                                                   |
-| -------------------------------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------- |
-| [HelsenorgeAktivSjekken](./DigiHealth/APIs/HelsenorgeAktivSjekken/README.md)                                               | REST      | [HelseID (tokens)](./DigiHealth/Authentication/HelseID_Auth.md)                                                        |
-| [Helsekontakt Medlemstjenester](./DigiHealth/APIs/Helsekontakt/Medlemstjenester/Medlemstjenester_README.md)                | FHIR/REST | [HelseID (tokens)](./DigiHealth/Authentication/HelseID_Auth.md)                                                        |
-| [Helsekontakt Tjenesteoversikt](./DigiHealth/APIs/Helsekontakt/AMQP%20Tjenesteoversikt/AMQP_Tjenesteoversikt_README.md)    | AMQP      | [AMQP mTLS](./DigiHealth/Authentication/AMQP_Auth.md)                                                                  |
-| [Helsekontakt Notifikasjon](./DigiHealth/APIs/Helsekontakt/AMQP%20Notifikasjon%20Helsekontakt/AMQP_Notifikasjon_README.md) | AMQP+FHIR | [AMQP mTLS](./DigiHealth/Authentication/AMQP_Auth.md); [HelseID (tokens)](./DigiHealth/Authentication/HelseID_Auth.md) |
-| [E-kontakt](./DigiHealth/APIs/Ekontakt/README.md)                                                                          | AMQP      | [AMQP mTLS](./DigiHealth/Authentication/AMQP_Auth.md)                                                                  |
+| API                                                                                                                        | Tech      | Auth                                                                                                               |
+| -------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------ |
+| [HelsenorgeAktivSjekken](./DigiHealth/APIs/HelsenorgeAktivSjekken/README.md)                                               | REST      | [HelseID (tokens)](./DigiHealth/Authentication/HelseID_Auth/)                                                      |
+| [Helsekontakt Medlemstjenester](./DigiHealth/APIs/Helsekontakt/Medlemstjenester/Medlemstjenester_README.md)                | FHIR/REST | [HelseID (tokens)](./DigiHealth/Authentication/HelseID_Auth/)                                                      |
+| [Helsekontakt Tjenesteoversikt](./DigiHealth/APIs/Helsekontakt/AMQP%20Tjenesteoversikt/AMQP_Tjenesteoversikt_README.md)    | AMQP      | [AMQP mTLS](./DigiHealth/Authentication/AMQP_Auth/)                                                                |
+| [Helsekontakt Notifikasjon](./DigiHealth/APIs/Helsekontakt/AMQP%20Notifikasjon%20Helsekontakt/AMQP_Notifikasjon_README.md) | AMQP+FHIR | [AMQP mTLS](./DigiHealth/Authentication/AMQP_Auth/); [HelseID (tokens)](./DigiHealth/Authentication/HelseID_Auth/) |
+| [E-kontakt](./DigiHealth/APIs/Ekontakt/README.md)                                                                          | AMQP      | [AMQP mTLS](./DigiHealth/Authentication/AMQP_Auth/)                                                                |
 
 ## Viewing Diagrams
 
