@@ -7,6 +7,7 @@ Mermaid diagrams and documentation for Norsk Helsenett (NHN) integrations.
 - Enable secure, bidirectional messaging between citizens (via Helsenorge/DigiHelse) and municipal providers.
 - NHN services in scope (confirm with NHN): HelseID (auth, mandatory), E-kontakt AMQP (primary messaging), HelsenorgeAktivSjekken (reachability check); Helsekontakt variants only if required.
 - Target test environments first; confirm scopes, queues, and payloads before production.
+- High-priority next step: request HelseID client credentials (client ID/secret + scopes for test) and NHN AMQP cert/key + queue/vhost config so we can connect to test and validate flows.
 
 ## Authentication (prerequisite)
 
