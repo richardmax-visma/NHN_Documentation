@@ -36,6 +36,17 @@ classDiagram
 | `3`   | HELSEHJELP | Helsehjelp | Healthcare                          |
 | `6`   | UNGDOM     | Ungdom     | Youth (13+, school health services) |
 
+```mermaid
+%% keep in sync with Classes/Omraade.mmd
+classDiagram
+  class Omraade {
+    <<enumeration>>
+    HELSEHJELP = 3
+    UNGDOM = 6
+  }
+
+```
+
 ## [Response](Classes/Response.mmd) payload
 
 | Field          | Type                       | Description                                   |
