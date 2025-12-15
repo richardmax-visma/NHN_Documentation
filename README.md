@@ -41,7 +41,7 @@ Check if citizens are digitally active on Helsenorge.
 
 Citizen's entry point for digital healthcare communication.
 
-Helsekontakt consists of three APIs: **Tjenesteoversikt** (AMQP), **Medlemstjenester** (FHIR), and **Notifikasjon Helsekontakt** (AMQP + FHIR).
+Helsekontakt consists of three APIs: **Tjenesteoversikt** (AMQP), **Medlemstjenester** (REST + FHIR), and **Notifikasjon Helsekontakt** (AMQP + FHIR).
 
 _Prerequisite: run HelsenorgeAktivSjekken first to confirm the citizen can be reached digitally (self or via representative) before sending notifications/messages._
 
@@ -56,7 +56,7 @@ _Prerequisite: run HelsenorgeAktivSjekken first to confirm the citizen can be re
 | [Flow](./APIs/Helsekontakt/AMQP%20Tjenesteoversikt/AMQP_Tjenesteoversikt_Flow.mmd) | AMQP message flow for home care services  |
 | [Class Relations](./APIs/Helsekontakt/AMQP%20Tjenesteoversikt/Relations/)          | MsgHead and Applikasjonskvittering models |
 
-#### Helsekontakt — Medlemstjenester (FHIR)
+#### Helsekontakt — Medlemstjenester (REST + FHIR)
 
 📁 [Docs](./APIs/Helsekontakt/Medlemstjenester/)
 
@@ -100,7 +100,7 @@ Environment reference and endpoints: [Test Environments](./Test_Environments/) (
 | ---------------------------------------------------------------------------- | --------- | ------------------------------------ |
 | [HelsenorgeAktivSjekken](./APIs/HelsenorgeAktivSjekken/)                     | REST      | Check if citizen is digitally active |
 | [AMQP Tjenesteoversikt](./APIs/Helsekontakt/AMQP%20Tjenesteoversikt/)        | AMQP      | Home care health contacts            |
-| [Medlemstjenester](./APIs/Helsekontakt/Medlemstjenester/)                    | FHIR      | Membership-based health services     |
+| [Medlemstjenester](./APIs/Helsekontakt/Medlemstjenester/)                    | REST+FHIR | Membership-based health services     |
 | [AMQP Notifikasjon](./APIs/Helsekontakt/AMQP%20Notifikasjon%20Helsekontakt/) | AMQP+FHIR | General health contact notifications |
 | [E-kontakt](./APIs/Ekontakt/)                                                | AMQP      | Administrative citizen messaging     |
 
@@ -109,7 +109,7 @@ Environment reference and endpoints: [Test Environments](./Test_Environments/) (
 | API                                                                                  | Tech      | Auth                                                                                         |
 | ------------------------------------------------------------------------------------ | --------- | -------------------------------------------------------------------------------------------- |
 | [HelsenorgeAktivSjekken](./APIs/HelsenorgeAktivSjekken/)                             | REST      | [HelseID (tokens)](./Authentication/HelseID_Auth/)                                           |
-| [Helsekontakt Medlemstjenester](./APIs/Helsekontakt/Medlemstjenester/)               | FHIR/REST | [HelseID (tokens)](./Authentication/HelseID_Auth/)                                           |
+| [Helsekontakt Medlemstjenester](./APIs/Helsekontakt/Medlemstjenester/)               | REST+FHIR | [HelseID (tokens)](./Authentication/HelseID_Auth/)                                           |
 | [Helsekontakt Tjenesteoversikt](./APIs/Helsekontakt/AMQP%20Tjenesteoversikt/)        | AMQP      | [AMQP mTLS](./Authentication/AMQP_Auth/)                                                     |
 | [Helsekontakt Notifikasjon](./APIs/Helsekontakt/AMQP%20Notifikasjon%20Helsekontakt/) | AMQP+FHIR | [AMQP mTLS](./Authentication/AMQP_Auth/); [HelseID (tokens)](./Authentication/HelseID_Auth/) |
 | [E-kontakt](./APIs/Ekontakt/)                                                        | AMQP      | [AMQP mTLS](./Authentication/AMQP_Auth/)                                                     |
