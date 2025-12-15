@@ -173,7 +173,7 @@ classDiagram
 ## Standards
 
 - Hodemelding v1.2: https://www.ehelse.no/standardisering/standarder/standard-for-hodemelding
-- Applikasjonskvittering v1.1: https://ehelse.no/his80415-2012
+- Applikasjonskvittering: https://www.ehelse.no/standardisering/standarder/standard-for-applikasjonskvittering
 
 ## Sources
 

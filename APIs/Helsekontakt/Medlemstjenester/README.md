@@ -289,6 +289,7 @@ classDiagram
 - Helsekontakter OpenAPI (prod): https://eksternapi.helsenorge.no/helsekontakter/swagger/v1/swagger.json
 - Helsekontakter Swagger (test): https://eksternapi.hn.test.nhn.no/helsekontakter/swagger/index.html
 - Helsekontakter OpenAPI (test): https://eksternapi.hn.test.nhn.no/helsekontakter/swagger/v1/swagger.json
+- Test environments and API endpoint patterns: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/1552384092/Testmilj+er+og+endepunkter
 
 ## Notes
 

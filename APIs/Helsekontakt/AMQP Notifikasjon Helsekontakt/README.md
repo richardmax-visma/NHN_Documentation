@@ -193,8 +193,8 @@ Implemented via CareTeam participants with different roles.
 ## Standards
 
 - Hodemelding v1.2
-- FHIR EpisodeOfCare: http://helsenorge.no/fhir/StructureDefinition/hn-specialist-EpisodeOfCare
-- FHIR CareTeam: http://helsenorge.no/fhir/StructureDefinition/hn-specialist-EpisodeOfCare_containedCareTeam
+- FHIR EpisodeOfCare (base): https://hl7.org/fhir/episodeofcare.html
+- FHIR CareTeam (base): https://hl7.org/fhir/careteam.html
 
 ## Sources
 
