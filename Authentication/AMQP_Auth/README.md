@@ -3,6 +3,9 @@
 Helsenorge messaging (E-kontakt, Helsekontakt AMQP flows) uses AMQP as transport protocol via NHN "Tjenestebuss".
 Authentication to the broker is done with mutual TLS (client certificate), not HelseID bearer tokens.
 
+See also: [HelseID Authentication](../HelseID_Auth/) for system-to-system REST/FHIR API access tokens.
+See also: [Test Environments](../../Test_Environments/) for environment-specific endpoints and connectivity constraints.
+
 ## What you need
 
 - NHN-issued client certificate and private key (Virksomhetssertifikat) registered for Tjenestebuss.

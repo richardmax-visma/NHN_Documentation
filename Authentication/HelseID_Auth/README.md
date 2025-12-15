@@ -7,6 +7,7 @@ HelseID is Norway's national authentication service for the health sector, provi
 - Any system-to-system (machine-to-machine) API call to NHN/Helsenorge where HelseID is required.
 - This document focuses on system-to-system access; end-user login on Helsenorge can still involve other components (see notes below).
 
+See also: [AMQP Authentication](../AMQP_Auth/) for Helsenorge messaging (Tjenestebuss) over mutual TLS.
 See also: [Test Environments](../../Test_Environments/) for endpoint URLs per environment.
 
 ## ⚠️ Important
