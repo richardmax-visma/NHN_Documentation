@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant Client as 🏥 Client System
+    participant HelseId as 🔐 HelseID
+    participant API as 📡 NHN/Helsenorge API
+
+    rect rgb(240, 248, 255)
+        Note over Client,HelseId: Token acquisition (OAuth 2.0 client credentials)
+        Client->>HelseId: Request access token (client credentials + scope)
+        HelseId-->>Client: Access token (Bearer)
+    end
+
+    rect rgb(240, 255, 240)
+        Note over Client,API: API call
+        Client->>API: HTTPS request with Authorization: Bearer <token>
+    end
+
+    rect rgb(255, 250, 240)
+        Note over API,Client: Response
+        API-->>Client: API response
+    end

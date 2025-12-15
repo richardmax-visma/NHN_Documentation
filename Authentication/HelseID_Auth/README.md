@@ -40,6 +40,8 @@ Notes from the requirement documentation:
 
 ## Token Flow
 
+Reference: [Authentication/HelseID_Auth/HelseID_Auth_Flow.mmd](Authentication/HelseID_Auth/HelseID_Auth_Flow.mmd) (click to view flow in Mermaid)
+
 ```
 ┌─────────────┐                          ┌─────────────┐
 │   Your      │  1. Request Token        │   HelseID   │
