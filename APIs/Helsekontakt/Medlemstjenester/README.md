@@ -16,8 +16,8 @@ The endpoint is protected by a JWT bearer token (see Swagger `JWT` security sche
 
 See also:
 
-- [HelseID authentication (shared)](../../Authentication/HelseID_Auth/README.md)
-- [HelseID auth flow](../../Authentication/HelseID_Auth/HelseID_Auth_Flow.mmd)
+- [HelseID authentication (shared)](../../../Authentication/HelseID_Auth/README.md)
+- [HelseID auth flow](../../../Authentication/HelseID_Auth/HelseID_Auth_Flow.mmd)
 
 ## Process (inline view)
 

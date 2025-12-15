@@ -2,8 +2,9 @@
 
 **API Name:** `NOTIFIKASJON_INNBYGGER_HELSEKONTAKT`  
 **Technology:** AMQP + FHIR  
-**Status:** In Production (since Apr 2023)  
-**Use case:** General health contact notifications (new solution, under pilot)
+**Status:** In Production (I DRIFT)  
+**Version:** v1.0 (Apr 28, 2023)  
+**Use case:** General health contact notifications
 
 ## When to use
 
@@ -13,7 +14,7 @@
 ## Channel and authentication
 
 - Transport: AMQP on NHN messaging infrastructure (cert-based).
-- Sender must be registered in Address Registry with Level 2 HerId.
+- Sender must be registered in Address Registry with a Level 2 HerId representing the health contact.
 
 ## Diagrams
 
@@ -145,7 +146,11 @@ classDiagram
 
 ### [AccessSecurity](Classes/AccessSecurity.mmd) Enum (meta.security)
 
-For patients aged 12-15, must specify access restrictions:
+`meta.security` indicates access restriction and is _conditional_.
+
+- Recommended for patients under 16 (0–16).
+- Required when the patient is 12–15 to document that an explicit access assessment has been made.
+- Note: enforcement is not implemented on Helsenorge as of Nov 13, 2025 (per Atlassian).
 
 | Code        | Norwegian                 | English                            |
 | ----------- | ------------------------- | ---------------------------------- |
@@ -183,7 +188,7 @@ Implemented via CareTeam participants with different roles.
 2. Message contains `MsgHead` + FHIR `EpisodeOfCare`
 3. **Helsenorge** processes and returns acknowledgment
 4. Citizen can now use digital services (dialog, appointments)
-5. Citizen messages flow back via AMQP Dialog
+5. If the health contact offers Digital Dialog, citizen messages flow back via AMQP Dialog
 
 ## Standards
 
@@ -194,4 +199,6 @@ Implemented via CareTeam participants with different roles.
 ## Sources
 
 - AMQP Notifikasjon Helsekontakt: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/1975418911/AMQP+Notifikasjon+Helsekontakt
+- AMQP Dialog helsepersonell (required if offering Digital Dialog): https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/1348175352
+- API-katalog (status/version): https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/1348174674/API-katalog
 - Meldingsutveksling med Helsenorge: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/690913297/Meldingsutveksling+med+Helsenorge
