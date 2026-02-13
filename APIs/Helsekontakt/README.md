@@ -10,11 +10,13 @@ Citizen entry point for digital communication and services via Helsenorge.
 
 ## Variants and technology
 
-| Technology  | API                                                              | Use Case                | Status        |
-| ----------- | ---------------------------------------------------------------- | ----------------------- | ------------- |
-| AMQP        | [Tjenesteoversikt](AMQP%20Tjenesteoversikt/)                     | Home care services only | In Production |
-| REST + FHIR | [Medlemstjenester](Medlemstjenester/)                            | Membership services     | In Production |
-| AMQP + FHIR | [Notifikasjon Helsekontakt](AMQP%20Notifikasjon%20Helsekontakt/) | General notifications   | In Production |
+| Technology  | API                                                              | Use Case                | Status                    |
+| ----------- | ---------------------------------------------------------------- | ----------------------- | ------------------------- |
+| AMQP        | [Tjenesteoversikt](AMQP%20Tjenesteoversikt/)                     | Home care services only | ⚠️ **DEPRECATED**         |
+| REST + FHIR | [Medlemstjenester](Medlemstjenester/)                            | Membership services     | In Production             |
+| AMQP + FHIR | [Notifikasjon Helsekontakt](AMQP%20Notifikasjon%20Helsekontakt/) | General notifications   | In Production (Use this!) |
+
+> **⚠️ Note:** AMQP Tjenesteoversikt is deprecated and should NOT be used by new actors. Use [AMQP Notifikasjon Helsekontakt](AMQP%20Notifikasjon%20Helsekontakt/) instead for creating health contacts.
 
 ## Health contact types
 
@@ -26,7 +28,9 @@ Citizen entry point for digital communication and services via Helsenorge.
 
 ## Diagrams (clickable + inline)
 
-### Tjenesteoversikt
+### Tjenesteoversikt ⚠️ DEPRECATED
+
+> **⚠️ This API is deprecated.** Use [Notifikasjon Helsekontakt](#notifikasjon-helsekontakt) for new implementations.
 
 Inline view:
 
@@ -125,12 +129,14 @@ Source: [Flow](AMQP%20Notifikasjon%20Helsekontakt/AMQP_Notifikasjon_Flow.mmd), [
 
 ## Quick comparison
 
-| Feature    | Tjenesteoversikt | Medlemstjenester | Notifikasjon   |
-| ---------- | ---------------- | ---------------- | -------------- |
-| Technology | AMQP             | REST/FHIR        | AMQP + FHIR    |
-| Use case   | Home care        | Group services   | General        |
-| Auth       | AMQP certs       | HelseID (Bearer) | AMQP certs     |
-| Payload    | XML (MsgHead)    | FHIR Bundle      | MsgHead + FHIR |
+| Feature    | Tjenesteoversikt (⚠️ Deprecated) | Medlemstjenester | Notifikasjon (✅ Recommended) |
+| ---------- | -------------------------------- | ---------------- | ----------------------------- |
+| Technology | AMQP                             | REST/FHIR        | AMQP + FHIR                   |
+| Use case   | Home care (legacy)               | Group services   | General                       |
+| Auth       | AMQP certs                       | HelseID (Bearer) | AMQP certs                    |
+| Payload    | XML (MsgHead)                    | FHIR Bundle      | MsgHead + FHIR                |
+
+> **⚠️ Note:** Tjenesteoversikt is deprecated. New implementations should use Notifikasjon Helsekontakt.
 
 ## References / Sources
 

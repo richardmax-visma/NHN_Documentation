@@ -1,17 +1,30 @@
 # AMQP Tjenesteoversikt
 
+> **⚠️ DEPRECATED - DO NOT USE FOR NEW IMPLEMENTATIONS**
+>
+> **Denne meldingstypen skal ikke benyttes av nye aktører.**
+>
+> For å opprette helsekontakter skal [AMQP Notifikasjon Helsekontakt](../AMQP%20Notifikasjon%20Helsekontakt/README.md) benyttes istedet.
+
 Sends an overview of home care services to citizens via AMQP messaging.
 
 **API Name:** `DIALOG_INNBYGGER_TJENESTEOVERSIKT`  
 **Technology:** AMQP  
-**Status:** In Production (I DRIFT)  
+**Status:** ~~In Production~~ **DEPRECATED** (I DRIFT - only for existing implementations)  
 **Version:** v1.0 (Feb 3, 2017)  
 **Use case:** Home care services (hjemmetjenester) only
 
+## ⚠️ Important Notice
+
+**This message type should NOT be used by new actors.**
+
+New implementations should use [AMQP Notifikasjon Helsekontakt](../AMQP%20Notifikasjon%20Helsekontakt/README.md) instead to create health contacts (helsekontakter).
+
+This documentation is maintained only for existing implementations that still use this deprecated API.
+
 ## When to use
 
-- Citizen receives home care services and should see them in Helsenorge.
-- Services are marked as digital citizen services and must be synchronized.
+⚠️ **DO NOT USE** - This API is deprecated for new implementations.
 
 ## Channel and authentication
 
