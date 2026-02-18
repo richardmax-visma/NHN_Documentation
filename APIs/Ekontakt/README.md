@@ -15,7 +15,7 @@ AMQP-based bidirectional messaging between citizens and healthcare providers via
 ## Channel and authentication
 
 - Transport: AMQP on NHN messaging infrastructure.
-- Auth/transport setup follows NHN AMQP requirements (cert-based). Use the queue configuration assigned by NHN.
+- Auth/transport setup follows NHN AMQP requirements (TLS + username/password). See [AMQP Auth](../../Authentication/AMQP_Auth/). Use the queue configuration assigned by NHN.
 
 ## Message flows
 

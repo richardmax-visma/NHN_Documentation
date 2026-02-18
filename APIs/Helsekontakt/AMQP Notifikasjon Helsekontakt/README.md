@@ -13,7 +13,7 @@
 
 ## Channel and authentication
 
-- Transport: AMQP on NHN messaging infrastructure (cert-based).
+- Transport: AMQP on NHN messaging infrastructure (TLS + username/password). See [AMQP Auth](../../../Authentication/AMQP_Auth/).
 - Sender must be registered in Address Registry with a Level 2 HerId representing the health contact.
 
 **Addressing and HER‑id**

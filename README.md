@@ -15,9 +15,9 @@ Mermaid diagrams and documentation for Norsk Helsenett (NHN) integrations.
 
 ## Authentication (prerequisite)
 
-- **Before calling any NHN APIs, set up auth for both channels: HelseID (tokens) for REST/FHIR and mTLS (certs) for AMQP.**
+- **Before calling any NHN APIs, set up auth for both channels: HelseID (tokens) for REST/FHIR and TLS + username/password for AMQP.**
   - REST/FHIR (e.g., HelsenorgeAktivSjekken, Helsekontakt Medlemstjenester): OAuth2 client-credentials via HelseID → short-lived bearer tokens per request.
-  - AMQP (e.g., E-kontakt, Helsekontakt AMQP flows): mutual TLS with NHN-issued client cert/key plus queue/vhost ACLs → no bearer tokens inside messages.
+  - AMQP (e.g., E-kontakt, Helsekontakt AMQP flows): TLS transport encryption with username/password authentication (SASL PLAIN) plus queue/vhost ACLs → no bearer tokens inside messages. Virksomhetssertifikat is used for message-level signing/encryption, not transport auth.
 
 🔐 [HelseID Auth](./Authentication/HelseID_Auth/)
 🔒 [AMQP Auth](./Authentication/AMQP_Auth/)
@@ -117,9 +117,9 @@ Environment reference and endpoints: [Test Environments](./Test_Environments/) (
 | ------------------------------------------------------------------------------------ | --------- | -------------------------------------------------------------------------------------------- | ----------------- |
 | [HelsenorgeAktivSjekken](./APIs/HelsenorgeAktivSjekken/)                             | REST      | [HelseID (tokens)](./Authentication/HelseID_Auth/)                                           | ✅ Active         |
 | [Helsekontakt Medlemstjenester](./APIs/Helsekontakt/Medlemstjenester/)               | REST+FHIR | [HelseID (tokens)](./Authentication/HelseID_Auth/)                                           | ✅ Active         |
-| [Helsekontakt Tjenesteoversikt](./APIs/Helsekontakt/AMQP%20Tjenesteoversikt/)        | AMQP      | [AMQP mTLS](./Authentication/AMQP_Auth/)                                                     | ⚠️ **DEPRECATED** |
-| [Helsekontakt Notifikasjon](./APIs/Helsekontakt/AMQP%20Notifikasjon%20Helsekontakt/) | AMQP+FHIR | [AMQP mTLS](./Authentication/AMQP_Auth/); [HelseID (tokens)](./Authentication/HelseID_Auth/) | ✅ Active         |
-| [E-kontakt](./APIs/Ekontakt/)                                                        | AMQP      | [AMQP mTLS](./Authentication/AMQP_Auth/)                                                     | ✅ Active         |
+| [Helsekontakt Tjenesteoversikt](./APIs/Helsekontakt/AMQP%20Tjenesteoversikt/)        | AMQP      | [AMQP Auth](./Authentication/AMQP_Auth/)                                                     | ⚠️ **DEPRECATED** |
+| [Helsekontakt Notifikasjon](./APIs/Helsekontakt/AMQP%20Notifikasjon%20Helsekontakt/) | AMQP+FHIR | [AMQP Auth](./Authentication/AMQP_Auth/); [HelseID (tokens)](./Authentication/HelseID_Auth/) | ✅ Active         |
+| [E-kontakt](./APIs/Ekontakt/)                                                        | AMQP      | [AMQP Auth](./Authentication/AMQP_Auth/)                                                     | ✅ Active         |
 
 ## Viewing Diagrams
 

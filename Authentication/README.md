@@ -21,16 +21,17 @@ Key features:
 
 ### [AMQP Authentication](./AMQP_Auth/)
 
-AMQP authentication is used specifically for Helsenorge messaging via NHN's Tjenestebuss (message broker). This includes:
+AMQP authentication is used specifically for Helsenorge messaging via NHN's Tjenestebuss (RabbitMQ broker). This includes:
 
 - E-kontakt messages
 - Helsekontakt AMQP flows
 
 Key features:
 
-- Mutual TLS with NHN-issued certificates
-- Virksomhetssertifikat (enterprise certificate)
-- Broker ACL-based access control
+- TLS transport encryption (`amqps://` on port 5671)
+- Username/password authentication (SASL PLAIN)
+- Virksomhetssertifikat for message-level signing and encryption (not transport auth)
+- Broker ACL-based queue/vhost access control
 - No bearer tokens within AMQP frames
 
 ## Which authentication method do I need?
@@ -38,7 +39,7 @@ Key features:
 | Use Case                                 | Authentication Method |
 | ---------------------------------------- | --------------------- |
 | REST/FHIR API calls                      | HelseID               |
-| AMQP messaging (E-kontakt, Helsekontakt) | AMQP Auth (mTLS)      |
+| AMQP messaging (E-kontakt, Helsekontakt) | AMQP Auth (TLS + username/password) |
 | User login flows                         | HelseID               |
 | Both messaging and APIs                  | Both methods          |
 

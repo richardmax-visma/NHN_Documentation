@@ -133,7 +133,7 @@ Source: [Flow](AMQP%20Notifikasjon%20Helsekontakt/AMQP_Notifikasjon_Flow.mmd), [
 | ---------- | -------------------------------- | ---------------- | ----------------------------- |
 | Technology | AMQP                             | REST/FHIR        | AMQP + FHIR                   |
 | Use case   | Home care (legacy)               | Group services   | General                       |
-| Auth       | AMQP certs                       | HelseID (Bearer) | AMQP certs                    |
+| Auth       | AMQP (TLS + user/pass)           | HelseID (Bearer) | AMQP (TLS + user/pass)        |
 | Payload    | XML (MsgHead)                    | FHIR Bundle      | MsgHead + FHIR                |
 
 > **⚠️ Note:** Tjenesteoversikt is deprecated. New implementations should use Notifikasjon Helsekontakt.

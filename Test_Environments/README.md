@@ -7,7 +7,7 @@ NHN provides multiple test environments for development and validation of Helsen
 - Determine which environment to target during development, testing, or production.
 - Find base URLs for EksternAPI (REST/FHIR), AMQP (Tjenestebuss), and HelseID token endpoints.
 
-See also: [HelseID Authentication](../Authentication/HelseID_Auth/) for REST/FHIR tokens and [AMQP Authentication](../Authentication/AMQP_Auth/) for mTLS certs/queues.
+See also: [HelseID Authentication](../Authentication/HelseID_Auth/) for REST/FHIR tokens and [AMQP Authentication](../Authentication/AMQP_Auth/) for AMQP credentials/queues.
 
 ## Environment summary
 
@@ -78,9 +78,9 @@ Note: Some endpoints are also available on Helsenett with separate `eksternapi-h
 
 ## AMQP Endpoints
 
-Use mutual TLS with NHN-issued cert/key.
+Authenticate with NHN-issued username/password over TLS.
 
-The Atlassian docs describe **one broker host for test** and **one for production** (port `5671`). In practice this is AMQP over TLS (often written as `amqps://`), but the exact URI scheme varies by client library.
+The Tjenestebuss uses AMQP over TLS on port `5671` (connection string: `amqps://<username>:<password>@<host>:5671/<vhost>`). The exact URI format may vary by client library.
 
 | Scope | AMQP Host      | Port | Notes                                                    |
 | ----- | -------------- | ---- | -------------------------------------------------------- |
@@ -117,7 +117,7 @@ MAS-02 ──► TEST1/TEST2 ──► QA ──► Prodkopi ──► PROD
 ## Access Requirements
 
 1. **Connectivity:** Agreement with NHN/Helsenett and access to relevant services (e.g., Tjenestebuss for AMQP)
-2. **Certificates:** Obtain and maintain a valid virksomhetssertifikat (mTLS) for AMQP usage
+2. **Credentials:** Obtain AMQP username/password from NHN, plus a valid virksomhetssertifikat for message-level signing/encryption
 3. **Address registry:** Ensure correct registrations in NHN Adresseregisteret (HERID, endpoints, roles)
 4. **HelseID:** Obtain HelseID client credentials (client ID/secret + scopes) for REST/FHIR APIs
 5. **Firewall:** Open/whitelist required IPs/ports per environment (see sources)

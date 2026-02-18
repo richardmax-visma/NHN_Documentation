@@ -28,7 +28,7 @@ This documentation is maintained only for existing implementations that still us
 
 ## Channel and authentication
 
-- Transport: AMQP on NHN messaging infrastructure (cert-based setup).
+- Transport: AMQP on NHN messaging infrastructure (TLS + username/password). See [AMQP Auth](../../../Authentication/AMQP_Auth/).
 - Queue/routing per NHN configuration for this API.
 
 ## Diagrams

@@ -1,23 +1,26 @@
 # AMQP Authentication (NHN messaging)
 
-Helsenorge messaging (E-kontakt, Helsekontakt AMQP flows) uses AMQP as transport protocol via NHN "Tjenestebuss".
-Authentication to the broker is done with mutual TLS (client certificate), not HelseID bearer tokens.
+Helsenorge messaging (E-kontakt, Helsekontakt AMQP flows) uses AMQP as transport protocol via NHN "Tjenestebuss" (RabbitMQ).
+Authentication to the broker is done with **TLS + username/password** (SASL PLAIN), not HelseID bearer tokens and not mTLS.
 
 See also: [HelseID Authentication](../HelseID_Auth/) for system-to-system REST/FHIR API access tokens.
 See also: [Test Environments](../../Test_Environments/) for environment-specific endpoints and connectivity constraints.
 
 ## What you need
 
-- NHN-issued client certificate and private key (Virksomhetssertifikat) registered for Tjenestebuss.
-- Trust chain for NHN/CA (Buypass/Commfides) installed so the broker cert is trusted.
+- **Username and password** for the Tjenestebuss queue system (provided by NHN).
+- **Virksomhetssertifikat** (enterprise certificate, Buypass/Commfides) for message-level signing and encryption of payload content — this is NOT used for transport-level authentication.
+- Trust chain for NHN/CA installed so the broker's TLS cert is trusted.
 - Queue/virtual host permissions from NHN.
 - If you use the official SDK: Helsenorge.Messaging (upgrade requirement: ≥ 6.0.3).
 
 ## How it works
 
-- Client presents cert/key during TLS handshake to Tjenestebuss (RabbitMQ). Broker authenticates via the client cert subject and applies queue/vhost ACLs.
-- HelseID access tokens are used for REST/FHIR APIs; they are not used to authenticate the AMQP connection itself.
-- Certs are long-lived (until expiry/rotation); each connection re-handshakes TLS.
+- The connection uses TLS (`amqps://` on port 5671) for transport encryption and authenticates via **username/password** embedded in the AMQP connection string (SASL PLAIN).
+- The connection string format (Helsenorge.Messaging ≥ 4.x): `amqps://<username>:<password>@<host>:5671/<vhost>`
+- **Virksomhetssertifikat** is used at the **message level** — for signing and encrypting sensitive content inside the AMQP payload — not for authenticating the AMQP connection itself.
+- HelseID access tokens are used for REST/FHIR APIs; they are not used to authenticate the AMQP connection.
+- Queue/vhost ACLs are managed by NHN and control which queues a given user can access.
 
 ## Key endpoints
 
@@ -42,3 +45,6 @@ See also: [Test Environments](../../Test_Environments/) for environment-specific
 - Meldingsutveksling med Helsenorge: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/690913297/Meldingsutveksling+med+Helsenorge
 - Krav til oppdatert versjon av Helsenorge Messaging: https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/2904064001/Krav+til+oppdatert+versjon+av+Helsenorge+Messaging
 - Krav til bruk av HelseID for system-til-system tilgang til APIer (for REST/FHIR side): https://helsenorge.atlassian.net/wiki/spaces/HELSENORGE/pages/2663776258/Krav+til+bruk+av+HelseID+for+system+til+system+tilgang+til+APIer
+- Helsenorge.Messaging SDK configuration (connection string format): https://github.com/helsenorge/Helsenorge.Messaging/blob/master/Documentation/Konfigurasjon.md
+- NHN Tjenestebuss technical requirements: https://www.nhn.no/tjenester/elektronisk-meldingsutveksling/tjenestebuss/tekniske-krav-til-bruk-av-tjenestebuss
+- NHN Tjenestebuss overview (AMQP/RabbitMQ): https://www.nhn.no/tjenester/tjenestebuss
