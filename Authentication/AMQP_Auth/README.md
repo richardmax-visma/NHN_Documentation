@@ -48,3 +48,4 @@ See also: [Test Environments](../../Test_Environments/) for environment-specific
 - Helsenorge.Messaging SDK configuration (connection string format): https://github.com/helsenorge/Helsenorge.Messaging/blob/master/Documentation/Konfigurasjon.md
 - NHN Tjenestebuss technical requirements: https://www.nhn.no/tjenester/elektronisk-meldingsutveksling/tjenestebuss/tekniske-krav-til-bruk-av-tjenestebuss
 - NHN Tjenestebuss overview (AMQP/RabbitMQ): https://www.nhn.no/tjenester/tjenestebuss
+- Veileder for AMQP oppsett via grunndata (queue setup + address registry): https://www.nhn.no/tjenester/elektronisk-meldingsutveksling/tjenestebuss/veileder-for-amqp-oppsett-via-grunndata
